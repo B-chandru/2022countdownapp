@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="2022 countdown this website counts how many days,seconds,minutes,hours for 2022">
+    <meta name="keywords" content="2022coundown,2022timer,2022newyear counter">
+    <meta name="theme-color" content="#000000"/>
+    <title>2022 countdown</title>
+    <link rel="shortcut icon" href="img/logo192.png" type="image/png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="img/logo192.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>2022 coundown</h1>
+        <div class="contain">
+            <div class="da"><h1 id="days">0</h1><h2>days</h2></div>
+            <div class="da"><h1 id="hours">0</h1><h2>hours</h2></div>
+            <div class="da"><h1 id="min">0</h1><h2>mins</h2></div>
+            <div class="da"><h1 id="sec">00</h1><h2>secs</h2></div>
+        </div>
+        <img src="img/bg.svg" alt="" width="500px" height="450px">
+    </div>
+    <script>
+        window.onload=()=>{
+setInterval(()=>{
+    const countdate = new Date(`Jan 1, 2022 00:00:00`).getTime();
+const current= new Date().getTime();
+const gap = countdate - current;
+
+const sec= 1000;
+const min = sec * 60;
+const hour = min * 60;
+const day = hour * 24;
+
+const text_day = Math.floor(gap / day);
+const text_hour = Math.floor((gap % day) / hour);
+const text_min = Math.floor((gap % hour) / min);
+const text_sec = Math.floor((gap % min) / sec) ;
+
+document.getElementById("days").innerText= text_day;
+document.getElementById("hours").innerText=text_hour;
+document.getElementById("min").innerText=text_min;
+document.getElementById("sec").innerText=text_sec;
+}, 1000)
+        }
+    </script>
+    <script src="app.js"></script>
+</body>
+</html>
