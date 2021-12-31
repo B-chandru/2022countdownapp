@@ -1,4 +1,4 @@
-var cacheName = '2022 countdown'; 
+var cacheName = '2023 countdown'; 
 
 var cacheAssets = [ 
   '/',
